@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Crims</title>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+    <link rel="manifest" href="ico/site.webmanifest">
+
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="mostraInfoJogador()">
+    <header class="cabecalho">
+        <div class="cabecalho-conteudo">
+            <div class="logo">
+                <img src="img/logo01.png" alt="">
+            </div>
+
+            <div class="data">
+                <span class="dias"><i class="far fa-calendar-alt"></i> Dia: 1</span> <span class="horas"><i
+                        class="far fa-clock"></i> 00 : 00</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <aside class="lado-esquerdo">
+
+            <nav>
+                <ul>
+                    <li><a href="#roubar">Roubar</a></li>
+                    <li><a href="#mochila">Suas Armas</a></li>
+                    <li><a href="#mercado-a">Mercado Armas</a></li>
+                    <li><a href="#mercado-c">Mercado Coletes</a></li>
+                    <li><a href="#rave">Festa Rave</a></li>
+                    <li><a href="#banco">Banco</a></li>
+                    <li><a href="#putas">Putas</a></li>
+                    <li><a href="#missoes">Missões</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="centro">
+            <section class="roubar" id="roubar">
+                <div class="centro-titulo">
+                    <h1>Roubar</h1>
+                    <img src="img/roubar.jpg" alt="">
+                    <p>O crime perfeito é aquele que não deixa vestígios...Seja rápido na ação e preciso nos detalhes e
+                        talvez você consiga escapar com uma boa grana. Às vezes tu sozinho não dá conta do recado, e é
+                        aí
+                        que entra a sua gangue: com a ajuda de seus comparsas você poderá executar roubos mais quentes.
+                        Você
+                        irá descobrir mais roubos e dificuldades após a conclusão de novos níveis!</p>
+                </div>
+
+                <div class="modal-roubos">
+
+                </div>
+
+                <div class="centro-escolha">
+                    <h5>Crimes solo:</h5>
+                    <select id="lista-crimes">
+
+                    </select>
+                </div>
+
+                <div class="centro-tabela">
+                    <table class="tabela-roubos">
+
+                    </table>
+                </div>
+
+                <div class="btn-roubar">
+                    <button>Roubar!</button>
+                </div>
+            </section>
+            <hr>
+            <section class="armas">
+                <div class="centro-titulo">
+                    <h1>Armas / Coletes</h1>
+                    <img src="img/armas.jpg" alt="">
+                    <p>
+                        EI MALUCO! Veio comprar um ferro?! Ou talvez um colete? Você vai precisar cara!
+                    </p>
+                </div>
+
+                <div class="armas-jogador">
+                    <h5 id="mochila">Suas Armas</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Armas</th>
+                                <th>Força</th>
+                                <th colspan="2">Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela-armas">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="coletes-jogador">
+                    <h5>Seus Coletes</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Coletes</th>
+                                <th>Resistência</th>
+                                <th colspan="2">Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mochila-colete">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mercado-armas" id="mercado-a">
+                    <h5>Mercado de Armas</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Armas</th>
+                                <th>Força</th>
+                                <th colspan="2">Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody class="mercado" id="tabela-mercado">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mercado-armas" id="mercado-c">
+                    <h5>Mercado de Coletes</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Coletes</th>
+                                <th>Resistência</th>
+                                <th colspan="2">Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela-coletes">
+                            <tr>
+                                <td>Fraldinha</td>
+                                <td>1%(1)</td>
+                                <td>$100</td>
+                                <td><button>Comprar</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <hr>
+            <section class="armas festa-rave">
+                <div class="centro-titulo">
+                    <h1 id="rave">Festa Rave</h1>
+                    <img src="img/festarave.jpg" alt="">
+                    <p>Você pode sentir os graves das ondas musicais invadindo o seu estômago só de estar próximo, do
+                        lado de fora. Mas por que ficar fora se você pode entrar e conhecer outras pessoas. Pra que
+                        beber e dirigir se você pode fumar e voar?</p>
+                </div>
+
+                <div class="tabela-rave">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Droga</th>
+                                <th>Estamina</th>
+                                <th colspan="2">Preço</th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabela-drogas">
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <hr>
+            <section>
+                <div class="centro-titulo">
+                    <h1 id="banco">Banco</h1>
+                    <img src="img/bank.jpg" alt="">
+                    <p>Bem vindo(a) ao Banco de CrimCity. Deposite aqui o seu dinheiro e receba juros diariamente!</p>
+                </div>
+                <div class="banco-info">
+                    <div class="saldo">Saldo bancário: <span id="valor-saldo">$0</span></div>
+                    <div>
+                        <select id="select-banco">
+                            <option value="">-Escolha-</option>
+                            <option value="1">Depositar</option>
+                            <option value="2">Sacar</option>
+                        </select>
+                        <input type="number" id="input-banco">
+                        <div class="btn-roubar">
+                            <button id="btn-transferir">Transferir</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section>
+                <div class="centro-titulo">
+                    <h1 id="putas">Putas</h1>
+                    <img src="img/putas.jpg" alt="">
+                    <p>Então você quer ser um cafetão? Isso pode ser um bom investimento comprar putas e deixá-las
+                        trabalhar para você. Esteja preparado para que elas possam morrer às vezes, é um mundo difícil.
+                        Quanto maior o seu nível, mais putas você pode possuir e maior o rendimento delas. Sua profissão
+                        também afeta seu lucro com putas.</p>
+                </div>
+
+                <div class="minhas-putas">
+                    <h5>Meu Cabaré</h5>
+                    <table class="tabela-cabare">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Nome
+                                </th>
+                                <th>
+                                    Pag./Dia
+                                </th>
+                                <th>
+                                    Ganhos
+                                </th>
+                                <th colspan="2">
+                                    Quant.
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabela-minhas-putas">
+
+                        </tbody>
+                    </table>
+
+                    <div class="ganhos-cabare">
+                        <p class="info-cabare">Ganhos não coletados: <span>10.000</span></p>
+                        <button class="btn-cabare" onclick="pegaGranaCabare()">Pegar a grana!</button>
+                    </div>
+                </div>
+
+
+                <div class="armas tab-putas">
+                   
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Foto
+                                </th>
+                                <th>
+                                    Pagamento/Dia
+                                </th>
+                                <th>
+                                    Preço
+                                </th>
+                                <th>
+
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabela-putas">
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <hr>
+            <section class="missoes">
+                <div class="centro-titulo">
+                    <h1 id="missoes">Missões</h1>
+                    <img src="img/missoes.jpg" alt="">
+                    <p>Lista de missões para você cumprir. Ao completa-las ganhará algumas
+                        recompensas.
+                    </p>
+                </div>
+
+                <div class="objetivos">
+                    <!--<h4>Objetivos</h4>
+                    <div class="missoes-lista">
+                        <p>Alcance 500 de respeito</p>
+                        <p class="p2-obj">0 / 500</p>
+                    </div>
+                    <div class="missoes-lista">
+                        <p>Junte $10.000 de grana</p>
+                        <p class="p2-obj">0 / 10000</p>
+                    </div>
+                    <div class="missoes-lista">
+                        <p>Compre uma arma.</p>
+                        <p class="p2-obj">0 / 1</p>
+                    </div>
+                    <div class="missoes-lista">
+                        <p>Faça 10 roubos</p>
+                        <p class="p2-obj">0 / 10</p>
+                    </div>
+                    <h4>Recompensas:</h4>
+                    <ul>
+                        <li>+1000$ de grana</li>
+                        <li>+1 puta</li>
+                        <li>+2% bônus de recompensa nos roubos</li>
+                        <li>+5 de espaço no cabaré</li>
+                    </ul>-->
+                </div>
+            </section>
+            
+        </section>
+
+        <aside class="lado-direito">
+            <div class="nome-jogador">
+                <div id="nome">Nome do jogador</div>
+                <div>Respeito: <span id="respeito">1</span></div>
+                <div>Bônus de Recompensa: <span id="bonus-recompensa">1</span></div>
+            </div>
+
+            <div class="jogador-estamina">
+                <div>Estamina: <span id="estamina">100%</span></div>
+                <div class="barra-estamina">
+                    <div></div>
+                </div>
+            </div>
+
+            <div class="jogador-status">
+                <div class="stats">
+                    <div>Inteligência</div>
+                    <div class="stats-n">58</div>
+                </div>
+                <div class="stats">
+                    <div>Força</div>
+                    <div class="stats-n">58</div>
+                </div>
+                <div class="stats">
+                    <div>Carisma</div>
+                    <div class="stats-n">58</div>
+                </div>
+                <div class="stats">
+                    <div>Resistência</div>
+                    <div class="stats-n">58</div>
+                </div>
+                <div class="grana">
+                    <div>Grana</div>
+                    <div class="stats-n">$58</div>
+                </div>
+            </div>
+
+            <div class="jogador-power">
+                <div>
+                    <div>Power de roubo solo</div>
+                    <div class="stats-n">58</div>
+                </div>
+            </div>
+
+            <div class="equipamento">
+                <h5>Equipamento</h5>
+                <div>Vazio</div>
+                <div>Vazio</div>
+            </div>
+        </aside>
+
+    </main>
+    
+
+    <div class="modal-missoes">
+        <h1>Missão Completa</h1>
+        <h4>Recompensas:</h4>
+        <ul>
+            <li>+$1000 de grana</li>
+            <li>+1 puta</li>
+            <li>+1% de recompensa</li>
+            <li>+5 de espaço</li>
+        </ul>
+        <button class="btn-modal">Fechar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
